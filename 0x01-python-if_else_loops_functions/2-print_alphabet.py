@@ -2,5 +2,5 @@
 i = 97
 
 while i != 123:
-    print(f"{i:c}", end=' ')
+    print("{:c}".format(i), end=' ')
     i += 1
