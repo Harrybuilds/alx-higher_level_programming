@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-
-import sys
-
-counter = len(sys.argv) - 1
-
 if __name__ == "__main__":
+    import sys
+
+    counter = len(sys.argv) - 1
+
     if counter == 0:
         print("{:d} arguments.".format(counter))
     elif counter == 1:
