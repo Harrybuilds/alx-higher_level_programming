@@ -7,11 +7,9 @@ def uppercase(str):
 
     while i != len(str):
         if str[i] < 'a' or str[i] > 'z':
-            return_string += str[i]
+            print("{}".format(str[1]))
             i += 1
         else:
             uppercase = chr(ord(str[i]) - ascii_offset)
-            return_string += uppercase
+            print("{}".format(uppercase))
             i += 1
-
-    return return_string
