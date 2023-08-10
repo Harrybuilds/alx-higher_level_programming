@@ -3,7 +3,7 @@
 def fizzbuzz():
     i = 1
 
-    while i != 100:
+    while i != 101:
         if i % 15 == 0:
             print("{}".format("FizzBuzz"), end=' ')
         elif i % 5 == 0:
