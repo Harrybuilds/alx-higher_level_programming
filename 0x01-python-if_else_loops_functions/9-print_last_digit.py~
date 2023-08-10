@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+import random
+def print_last_digit(number):
+
+    last_digit = str(number)[-1]
+    print(f"{last_digit}", end='')
+    return last_digit
+
+number = random.randint(-1000, 10000)
+print_last_digit(number)
+
+number = random.randint(-1000, 10000)
+print_last_digit(number)
+
+number = random.randint(-1000, 10000)
+r = print_last_digit(number)
+
+print(r)

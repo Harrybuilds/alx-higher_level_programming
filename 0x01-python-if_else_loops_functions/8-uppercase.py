@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-    return_string = ''
     i = 0
     ascii_offset = ord('a') - ord('A')
 
