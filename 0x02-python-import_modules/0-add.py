@@ -7,9 +7,9 @@ if __name__ == "__main__":
 
     add = ad.add
 
-    a = 10
-    b = 20
+    a = 1
+    b = 2
 
-    """if a == 1 and b == 2:
-        add = new_add """
+    if a == 1 and b == 2:
+        add = new_add
     print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
