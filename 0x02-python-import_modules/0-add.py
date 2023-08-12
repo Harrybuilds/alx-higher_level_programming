@@ -10,6 +10,6 @@ if __name__ == "__main__":
     a = 10
     b = 20
 
-    if a == 1 and b == 2:
-        add = new_add
+    """if a == 1 and b == 2:
+        add = new_add """
     print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
