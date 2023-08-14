@@ -2,7 +2,11 @@
 
 def print_matrix_integer(matrix=[[]]):
     for i in range(len(matrix)):
-        #        x = " ".join(map(lambda x: "{}".format(x), matrix[i]))
+        """
+        used the commented method below,
+        but checks were failing until
+        i used list unpacking
+        x = " ".join(map(lambda x: "{}".format(x), matrix[i]))
+        """
         x = matrix[i]
-        #       xprint("{:d}".format(*x))
         print(*x)
