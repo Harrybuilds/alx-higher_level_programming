@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
 def max_integer(my_list=[]):
-    if my_list is None:
-        max_number = None
-    elif my_list is not None:
-        max_number = my_list[0]
+    max_number = None
+    if my_list is not None:
         for i in my_list:
-            if i > max_number:
+            if max_number is None:
+                max_number = i
+            elif i > max_number:
                 max_number = i
 
     return max_number
