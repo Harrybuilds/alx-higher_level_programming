@@ -6,4 +6,4 @@ def print_sorted_dictionary(a_dictionary):
     new_dict = dict(new_list)
 
     for k, v in new_dict.items():
-        print(k, ": ", v)
+        print("{:s} {}".format(k, v))
