@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" class Square that definess a square """
+
 
 class Square:
     """ class Square that defines a square"""
@@ -13,7 +15,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Sets value into size, must be int.  
+        """Sets value into size, must be an integer.
         args: value (int): size of the square.
         """
         if type(value) is not int:
