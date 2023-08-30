@@ -4,9 +4,9 @@ def safe_print_division(a, b):
     try:
         result = a / b
     except ZeroDivisionError:
-        result = "None"
+        result = None
     except (TypeError):
-        result = "None"
+        result = None
         pass
     finally:
         print("inside result: {}".format(result))
