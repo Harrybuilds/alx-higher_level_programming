@@ -9,4 +9,3 @@ def safe_function(fct, *args):
         return fct(a, b)
     except (ZeroDivisionError, IndexError, NameError) as e:
         print("{} {} ".format("Exception:", e), file=sys.stderr)
-        return None
