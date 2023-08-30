@@ -8,4 +8,4 @@ def safe_function(fct, *args):
         a, b = args[0], args[1]
         return fct(a, b)
     except (ZeroDivisionError, IndexError, NameError) as e:
-        print("{} {} ".format("Exception:", e), file=sys.stderr)
+        print("{} {}".format("Exception:", e), file=sys.stderr)
