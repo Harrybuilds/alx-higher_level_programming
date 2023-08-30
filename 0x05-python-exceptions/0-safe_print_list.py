@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
 def safe_print_list(my_list=[], x=0):
+    if my_list is None:
+        raise TypeError
+    if x == 0:
+        raise IndexError
     new_list = my_list[0:x]
     for element in new_list:
         try:
