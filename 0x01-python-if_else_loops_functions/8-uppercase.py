@@ -15,5 +15,3 @@ def uppercase(str):
             else:
                 end = "\n"
             print("{:c}".format(num), end=end)
-    else:
-        print()
