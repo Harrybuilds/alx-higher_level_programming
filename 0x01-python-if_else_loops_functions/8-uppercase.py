@@ -1,11 +1,17 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-    tobeprinted = ""
     for i in range(len(str)):
         num = ord(str[i])
         if num in range(97, 123):
-            tobeprinted += f"{num - 32:c}"
+            if i < len(str) - 1:
+                end = ""
+            else:
+                end = "\n"
+            print("{:c}".format(num - 32), end=end)
         else:
-            tobeprinted += f"{num:c}"
-    print("{:s}".format(tobeprinted))
+            if i < len(str) - 1:
+                end = ""
+            else:
+                end = "\n"
+            print("{:c}".format(num), end=end)
