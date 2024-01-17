@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 
-allmsg = ["and is greater than 5","and is 0", "and is less than 6 and not 0"]
+allmsg = ["and is greater than 5", "and is 0", "and is less than 6 and not 0"]
 
 number = random.randint(-10000, 10000)
 last_digit = int(f"{str(number)[-1]}")

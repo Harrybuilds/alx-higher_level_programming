@@ -3,7 +3,7 @@
 def uppercase(str):
     tobeprinted = ""
     for i in range(len(str)):
-        num =  ord(str[i])
+        num = ord(str[i])
         if num in range(97, 123):
             tobeprinted += f"{num - 32:c}"
         else:
