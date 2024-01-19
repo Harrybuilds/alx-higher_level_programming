@@ -13,10 +13,9 @@ if __name__ == "__main__":
     if sys.argv[2] in operations:
 
         operation = operations.index(sys.argv[2])
-        print(operation)
 
         if operation == 0:
-            print("{} {} {} = {}".format(sys.argv[1],sys.argv[2],sys.argv[3],cal.add(int(sys.argv[1]), int(sys.argv[3]))))
+            print(f"{sys.argv[1]} {sys.argv[2]} {sys.argv[3]} = {cal.add(int(sys.argv[1]), int(sys.argv[3]))}")
         elif operation == 1:
              print("{} {} {} = {}".format(sys.argv[1],sys.argv[2],sys.argv[3],cal.sub(int(sys.argv[1]), int(sys.argv[3]))))
         elif operation == 2:
