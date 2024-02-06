@@ -39,6 +39,8 @@ class Node:
 
 
 
+""" singlylinkedlist class """
+
 class SinglyLinkedList:
 
     """ SinglyLinkedList class that defines a node """
