@@ -7,7 +7,6 @@ class Square:
         """ instantiates every object of this square class """
         self.size = size
 
-
     @property
     def size(self):
         """ private instance attribute getter (__size)"""
@@ -20,10 +19,8 @@ class Square:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size =  value
-
+        self.__size = value
 
     def area(self):
-        """ computes and returns the area of the square object """        
-        return self.size **2
-
+        """ computes and returns the area of the square object """
+        return self.size ** 2
