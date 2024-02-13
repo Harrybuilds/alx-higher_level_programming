@@ -2,6 +2,7 @@
 
 """ a class called Square that defines a square """
 
+
 class Square:
     """ a class that defines a square """
 
@@ -35,9 +36,9 @@ class Square:
         err = "position must be a tuple of 2 positive integers"
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError(err)
-        if not isinstance(value[0], int):
+        if not isinstance(value[0], int) or value[0] < 0:
             raise TypeError(err)
-        if not isinstance(value[1], int):
+        if not isinstance(value[1], int) or value[1] < 0:
             raise TypeError(err)
         self.__position = value
 
