@@ -58,5 +58,8 @@ class Rectangle:
         else:
             rec = ""
             for i in range(self.height):
-                rec += "{}".format('#' * self.width) + '\n'
+                if i != self.height - 1:
+                    rec += "{}".format('#' * self.width) + '\n'
+                else:
+                    rec += "{}".format('#' * self.width)
             return rec
