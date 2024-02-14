@@ -2,8 +2,9 @@
 
 """ module for function to add 2 numbers """
 
+
 def add_integer(a, b=98):
-    """ function to add 2 numbers 
+    """ function to add 2 numbers
     Args:
         a: first number
         b: second number
