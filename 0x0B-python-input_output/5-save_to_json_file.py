@@ -1,4 +1,4 @@
-#!/usr/ykbin/python3
+#!/usr/bin/python3
 
 """
 module that houses a function that saves
