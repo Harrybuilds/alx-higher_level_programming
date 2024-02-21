@@ -14,4 +14,4 @@ def read_file(filename=""):
     Return: None is returned
     """
     with open(filename, 'r', encoding='UTF8') as f:
-        print(f.read())
+        print(f.read(), end="")
