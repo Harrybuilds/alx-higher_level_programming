@@ -1,5 +1,4 @@
 #!/usr/ykbin/python3
-import json
 
 """
 module that houses a function that saves
@@ -20,6 +19,8 @@ def save_to_json_file(my_obj, filename):
     Return:
        None is returned
     """
+    import json
+
     json_rep = json.dumps(my_obj)
     with open(filename, 'w', encoding='UTF8') as f:
         f.write(json_rep)
