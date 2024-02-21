@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 
 """
 module that houses a function that
@@ -19,5 +18,7 @@ def to_json_string(my_obj):
     Return:
        json string representation of the python object
     """
+
+    import json
 
     return json.dumps(my_obj)
