@@ -81,12 +81,4 @@ class Square(Rectangle):
         """
         public method to display # representation for Rectangle instance
         """
-        rec = ''
-        for j in range(self.size):
-            print()
-        for i in range(self.seize):
-            if i != self.size - 1:
-                rec += '{} {}\n'.format(' ' * self.x, '#' * self.width)
-            else:
-                rec += '{} {}'.format(' ' * self.x, '#' * self.width)
-        print(rec)
+        super().display(size, size)
