@@ -15,6 +15,44 @@ class Base:
     """
 
     __nb_objects = 0
+    __true_nb_objects = 0
+    __properties = {}
+
+    def __init__(self, id=None) -> None:
+        """
+        __init__ - instance initialization of a base instance
+
+        Args:
+           self: reference to the instance being created
+           id: optional parameter that cater to the supposed
+           id of that instance
+
+        Return:
+           None is returned
+        """
+        key = str(Base.__true_nb_objects)
+        baseclass = self.__class__.__base__.__name__
+        if id is not None:
+            if id < 0:
+                raise ValueError('id can not be < 0')
+            self.id = id
+            Base.__true_nb_objects += 1
+            Base.__properties[key] = self.__dict__
+            Base.__properties[key]["class"] = self.__class__.__name__
+            Base.__properties[key]['baseclass'] = baseclass
+        else:
+            Base.__nb_objects += 1
+            Base.__true_nb_objects += 1
+            self.id = self.__nb_objects
+            Base.__properties[key] = self.__dict__
+            Base.__properties[key]["class"] = self.__class__.__name__
+            Base.__properties[key]['baseclass'] = baseclass
+
+    @classmethod
+    def resetclasspri_attr(cls):
+        cls.__nb_objects = 0
+        cls.__true_nb_objects = 0
+        cls.__properties.clear()
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -32,10 +70,12 @@ class Base:
              Or a string representation ofthe provided list
              of dictionaries
         """
-        if list_dictionaries is None:
+        if list_dictionaries:
             if len(list_dictionaries) == 0:
                 return '[]'
-        return json.dumps(list_dictionaries, sort_keys=True)
+            return json.dumps(list_dictionaries)
+        else:
+            return '[]'
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -51,33 +91,17 @@ class Base:
         Return:
            Nothing is to be returned therefore None is returned
         """
-
         if list_objs is None:
-            list_obj = []
+            list_objs = []
+
+        if not isinstance(list_objs, list):
+            raise TypeError("list_object must be a either list or None")
 
         filename = cls.__name__ + ".json"
 
         with open(filename, 'w') as f:
-            json_rep = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
-            f.write(json_rep)
-
-    def __init__(self, id=None) -> None:
-        """
-        __init__ - instance initialization of a base instance
-
-        Args:
-           self: reference to the instance being created
-           id: optional parameter that cater to the supposed
-           id of that instance
-
-        Return:
-           None is returned
-        """
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = self.__nb_objects
+            rp = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            f.write(rp)
 
     @staticmethod
     def from_json_string(json_string):
@@ -96,7 +120,7 @@ class Base:
         return the list represented by
         json_string
         """
-        if not json_string:
+        if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
 

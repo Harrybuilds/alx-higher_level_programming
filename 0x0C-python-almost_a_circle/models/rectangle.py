@@ -14,13 +14,24 @@ class Rectangle(Base):
     Rectangle class that inherits from
     the base class
     """
+    __properties = {}
+    __true_nb_objects = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ initialises Rectangle instances """
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
+        key = str(Rectangle.__true_nb_objects)
+        clas = self.__class__.__name__
+        baseclass = self.__class__.__base__.__name__
+        Rectangle.__true_nb_objects += 1
+        Rectangle.__properties[key] = self.__dict__
+        Rectangle.__properties[key]["class"] = clas
+        Rectangle.__properties[key]["baseclass"] = baseclass
+#        print(Rectangle.__properties)
 
     @property
     def width(self):
@@ -85,16 +96,30 @@ class Rectangle(Base):
         print(rec)
 
     def __str__(self):
-        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+        clas = f'[{self.__class__.__name__}]'
+        idxy = f'({self.id}) {self.x}/{self.y}'
+        return clas + idxy + f' - {self.width}/{self.height}'
 
     def update(self, *args, **kwargs):
         if args:
             attrs = ["id", "width", "height", "x", "y"]
             for ind, arg in enumerate(args):
+                if not isinstance(args[0], int):
+                    raise TypeError("id must be an integer")
+                if args[0] < 0:
+                    raise ValueError("id must be >= 0")
                 setattr(self, attrs[ind], arg)
         else:
             for k, v in kwargs.items():
+                if k == 'id':
+                    if not isinstance(v, int):
+                        raise TypeError("id must be an integer")
+                    if v < 0:
+                        raise ValueError("id must be >= 0")
                 setattr(self, k, v)
 
     def to_dictionary(self):
-        return {'y': self.y, 'x': self.x, 'id': self.id, 'width': self.width, 'height': self.height}
+        y, x = self.y, self.x
+        width, height = self.width, self.height
+        id = self.id
+        return {'x': x, 'width': width, 'id': id, 'height': height, 'y': y}
