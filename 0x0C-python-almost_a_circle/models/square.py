@@ -76,3 +76,17 @@ class Square(Rectangle):
         all custom assigned attributes of Square instance
         """
         return {'x': self.x, 'y': self.y, 'size': self.size, 'id': self.id}
+
+    def display(self):
+        """
+        public method to display # representation for Rectangle instance
+        """
+        rec = ''
+        for j in range(self.size):
+            print()
+        for i in range(self.seize):
+            if i != self.size - 1:
+                rec += '{} {}\n'.format(' ' * self.x, '#' * self.width)
+            else:
+                rec += '{} {}'.format(' ' * self.x, '#' * self.width)
+        print(rec)
