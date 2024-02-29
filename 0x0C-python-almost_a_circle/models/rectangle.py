@@ -35,10 +35,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ getter method for private width attribute """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """ setter method for private width attribute """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -47,10 +49,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ getter method for private height attribute """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """ setter method for private height attribute """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -59,10 +63,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ getter method for private x attribute """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """ setter method for private x attribute """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -71,10 +77,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ getter method for private y attribute """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """ setter method for private y attribute """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -82,9 +90,13 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ public method for computation of area for Rectangle instance """
         return self.width * self.height
 
     def display(self):
+        """
+        public method to display # representation for Rectangle instance
+        """
         rec = ''
         for j in range(self.y):
             print()
@@ -96,11 +108,19 @@ class Rectangle(Base):
         print(rec)
 
     def __str__(self):
+        """
+        method that defines what happens when python str()
+        is called on a Rectangle instance
+        """
         clas = f'[{self.__class__.__name__}]'
         idxy = f'({self.id}) {self.x}/{self.y}'
         return clas + idxy + f' - {self.width}/{self.height}'
 
     def update(self, *args, **kwargs):
+        """
+        public instance method that updates attributes
+        of Rectangle instance
+        """
         if args:
             attrs = ["id", "width", "height", "x", "y"]
             for ind, arg in enumerate(args):
@@ -119,6 +139,10 @@ class Rectangle(Base):
                 setattr(self, k, v)
 
     def to_dictionary(self):
+        """
+        public instance method that returns a dictionary copy of
+        all custom assigned attributes of Rectangle instance
+        """
         y, x = self.y, self.x
         width, height = self.width, self.height
         id = self.id

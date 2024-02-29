@@ -50,6 +50,7 @@ class Base:
 
     @classmethod
     def resetclasspri_attr(cls):
+        """ public class method to reset all class private attribute """
         cls.__nb_objects = 0
         cls.__true_nb_objects = 0
         cls.__properties.clear()
