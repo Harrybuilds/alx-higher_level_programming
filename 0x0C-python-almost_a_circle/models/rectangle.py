@@ -32,7 +32,6 @@ class Rectangle(Base):
         Rectangle.__properties[key]["class"] = clas
         Rectangle.__properties[key]["baseclass"] = baseclass
 
-
     @property
     def width(self):
         """ getter method for private width attribute """
@@ -101,10 +100,10 @@ class Rectangle(Base):
         for j in range(self.y):
             print()
         for i in range(self.height):
-#            if i != self.height - 1:
-            rec += '{} {}\n'.format(' ' * self.x, '#' * self.width)
-#            else:
-#                rec += '{} {}'.format(' ' * self.x, '#' * self.width)
+            if i != self.height - 1:
+                rec += '{} {}\n'.format(' ' * self.x, '#' * self.width)
+            else:
+                rec += '{} {}'.format(' ' * self.x, '#' * self.width)
         print(rec)
 
     def __str__(self):
