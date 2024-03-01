@@ -112,7 +112,7 @@ class Rectangle(Base):
         is called on a Rectangle instance
         """
         clas = f'[{self.__class__.__name__}]'
-        idxy = f'({self.id}) {self.x}/{self.y}'
+        idxy = f' ({self.id}) {self.x}/{self.y}'
         return clas + idxy + f' - {self.width}/{self.height}'
 
     def update(self, *args, **kwargs):
