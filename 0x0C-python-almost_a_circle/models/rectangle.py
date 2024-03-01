@@ -98,7 +98,7 @@ class Rectangle(Base):
         """
         rec = ''
         for j in range(self.y):
-            print()
+            print("", end="")
         for i in range(self.height):
             if i != self.height - 1:
                 rec += '{} {}\n'.format(' ' * self.x, '#' * self.width)
