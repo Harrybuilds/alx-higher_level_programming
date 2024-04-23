@@ -8,7 +8,7 @@ if (lenArgv === 0) {
 } else if (lenArgv === 1) {
   args = 'argument found';
 } else {
-  args = 'arguments found';
+  args = 'Arguments found';
 }
 
 console.log(args);
