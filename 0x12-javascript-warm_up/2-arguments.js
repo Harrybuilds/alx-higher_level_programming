@@ -6,7 +6,7 @@ let args;
 if (lenArgv === 0) {
   args = 'No argument';
 } else if (lenArgv === 1) {
-  args = 'argument found';
+  args = 'Argument found';
 } else {
   args = 'Arguments found';
 }
