@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module to list all states in ascending order
+"""
 import MySQLdb
 import sys
 
