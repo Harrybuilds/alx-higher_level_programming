@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 module to print first state that
 starts with a certain latter

@@ -1,48 +1,29 @@
 #!/usr/bin/python3
-
-"""
-module to list columns from 2 tables
-"""
-
+"""  lists all states from the database hbtn_0e_0_usa """
 import MySQLdb
 import sys
 
-# Get command-line arguments
-mysql_username = sys.argv[1]
-mysql_password = sys.argv[2]
-database_name = sys.argv[3]
 
-
-try:
-    # Establish connection
-    connection = MySQLdb.connect(
+if __name__ == "__main__":
+    db = MySQLdb.connect(
         host="localhost",
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
     )
 
-    # Create cursor
-    cursor = connection.cursor()
+    cur = db.cursor()
 
-    # Define SQL query
-    sql = """
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id ASC;
-    """
+    cur.execute(
+        """
+        SELECT cities.id, cities.name, states.name
+        FROM cities INNER JOIN states ON states.id=cities.state_id
+        """
+    )
 
-    cursor.execute(sql)
-
-    # Fetch results
-    rows = cursor.fetchall()
+    rows = cur.fetchall()
     for row in rows:
         print(row)
-
-    # Close cursor and connection
-    cursor.close()
-    connection.close()
-
-except MySQLdb.Error as e:
-    print("MySQL Error:", e)
+    cur.close()
+    db.close()

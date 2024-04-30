@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 module that prints a states by id
 if state is found else not found

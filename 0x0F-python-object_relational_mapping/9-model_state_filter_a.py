@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 module that uses sqlalchemy to list
 states thats contains a certain letter

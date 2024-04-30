@@ -1,31 +1,42 @@
+#!/usr/bin/python3
+"""
+module to list states passed as argument and
+subjected to sql injection attacks
+"""
+
 import MySQLdb
 import sys
 
-# Get command-line arguments
-mysql_username = sys.argv[1]
-mysql_password = sys.argv[2]
-database_name = sys.argv[3]
-state_name = sys.argv[4]
+if __name__ == "__main__":
+    # MySQL connection parameters
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    tobesearched = sys.argv[4]
 
-try:
-    # Establish connection
-    connection = MySQLdb.connect(host="localhost", user=mysql_username, passwd=mysql_password, db=database_name)
+    # Connect to MySQL server
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=database
+                         )
 
-    # Create cursor
-    cursor = connection.cursor()
+    # Create a cursor object
+    cursor = db.cursor()
 
-    # Define SQL query with format
-    sql = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(sql, (state_name,))
+    sql = "SELECT * FROM states WHERE name = '%s' ORDER BY id ASC"
 
-    # Fetch results
+    # Execute SQL query to select all states
+    cursor.execute(sql % tobesearched)
+
+    # Fetch all rows
     rows = cursor.fetchall()
+
+    # Print results
     for row in rows:
         print(row)
 
-    # Close cursor and connection
+    # Close cursor and database connection
     cursor.close()
-    connection.close()
-
-except MySQLdb.Error as e:
-    print("MySQL Error:", e)
+    db.close()

@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 module to list all states
 using sqlalchemy module
