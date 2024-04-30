@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 module to list states passed as argument
 """
@@ -23,7 +22,7 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    sql = "SELECT * FROM states WHERE name LIKE 'N%'"
+    sql = "SELECT * FROM states WHERE name LIKE 'N%' | 'n%'"
     # Execute SQL query to select all states
     cursor.execute(sql)
 
