@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+"""
+module that prints a states by id
+if state is found else not found
+using sqlalchemy
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

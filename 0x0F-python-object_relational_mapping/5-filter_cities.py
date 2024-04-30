@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+
+"""
+module to list columns from 2 tables
+"""
+
 import MySQLdb
 import sys
 

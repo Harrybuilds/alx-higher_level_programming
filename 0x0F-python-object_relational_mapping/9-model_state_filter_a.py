@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+module that uses sqlalchemy to list
+states thats contains a certain letter
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+module to list all states
+using sqlalchemy module
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

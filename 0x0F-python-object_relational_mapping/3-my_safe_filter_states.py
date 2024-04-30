@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+"""
+module to list states passed as argument and
+free of sql injection
+"""
 import MySQLdb
 import sys
 
