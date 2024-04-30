@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    sql = "SELECT * FROM states WHERE name LIKE 'N%' | 'n%'"
+    sql = "SELECT * FROM states WHERE name LIKE 'N%' || 'n%'"
     # Execute SQL query to select all states
     cursor.execute(sql)
 
