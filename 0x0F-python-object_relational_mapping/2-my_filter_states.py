@@ -2,7 +2,7 @@
 
 """
 module to list states passed as argument and
-subjected to sql injection
+subjected to sql injection attacks
 """
 
 import MySQLdb
