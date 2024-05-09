@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that deletes a resource using curl
 # Check if a URL argument is provided
 if [ -z "$1" ]; then

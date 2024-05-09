@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #Bash script to display size of given url in bytes
 
 # Check if URL argument is provided

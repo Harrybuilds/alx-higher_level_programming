@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script to display available method on a url
 
 # Check if a URL argument is provided
