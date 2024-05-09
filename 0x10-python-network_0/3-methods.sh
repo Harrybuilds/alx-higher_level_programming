@@ -1,10 +1,3 @@
 #!/bin/bash
 # script to display available method on a url
-
-# Check if a URL argument is provided
-if [ -z "$1" ]; then
-    echo "Usage: $0 <URL>"
-    exit 1
-fi
-
-curl -X OPTIONS -i "$1"
+curl -sI $1 | grep -i allow | awk '{print $2}'
