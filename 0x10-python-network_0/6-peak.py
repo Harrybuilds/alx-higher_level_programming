@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# function to findthepeak number in a list
+"""
+ function to findthepeak number in a list
+"""
 def find_peak(list_of_integers):
     if not list_of_integers:
         return None
