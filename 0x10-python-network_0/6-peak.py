@@ -4,15 +4,25 @@
 """
 
 
-def find_peak(list_of_integers):
-    if not list_of_integers:
+def find_peak(numbr):
+    '''
+        Finds the peak in a list of numbers
+    '''
+    lengt = len(numbr)
+    if lengt == 0:
         return None
-    if len(list_of_integers) == 1:
-        return list_of_integers[0]
-    mid = len(list_of_integers) // 2
-    if (mid == 0 or list_of_integers[mid] >= list_of_integers[mid - 1]) and (mid == len(list_of_integers) - 1 or list_of_integers[mid] >= list_of_integers[mid + 1]):
-        return list_of_integers[mid]
-    elif mid > 0 and list_of_integers[mid - 1] > list_of_integers[mid]:
-        return find_peak(list_of_integers[:mid])
-    else:
-        return find_peak(list_of_integers[mid + 1:])
+    if lengt == 1:
+        return (numbr[0])
+    if lengt == 2:
+        return numbr[0] if numbr[0] >= numbr[1] else numbr[1]
+
+    for idx in range(0, lengt):
+        value = numbr[idx]
+        if (idx > 0 and idx < lengt - 1 and
+                numbr[idx + 1] <= value and numbr[idx - 1] <= value):
+            return value
+        elif idx == 0 and numbr[idx + 1] <= value:
+            return value
+        elif idx == lengt - 1 and numbr[idx - 1] <= value:
+            return value
+    return pick
