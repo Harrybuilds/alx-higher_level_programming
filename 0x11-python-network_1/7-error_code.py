@@ -9,19 +9,18 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    # get url and email passed through cli
+    # get url passed through cli
     url = sys.argv[1]
 
-    try:
-        # make the post request
-        res = requests.get(url)
+    # send the get request
+    res = requests.get(url)
 
-        # raise an error if status_code >= 400
-        res.raise_for_status()
-
-        # extract the body from the data returned
+    # check if HTTP status code >= 400
+    if res.status_code >= 400:
+        print(f"Error code: {res.status_code}")
+    else:
+        # get response body
         response = res.text
-
         print(response)
-    except requests.RequestException as e:
-        print("Error:", e.response.status_code)
+
+    
