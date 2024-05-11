@@ -22,5 +22,3 @@ if __name__ == '__main__':
         # get response body
         response = res.text
         print(response)
-
-    
