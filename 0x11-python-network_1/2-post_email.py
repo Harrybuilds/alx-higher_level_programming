@@ -12,7 +12,7 @@ if __name__ == '__main__':
     url = sys.argv[1]
     email = sys.argv[2]
 
-    data = urlparse.urlencode({'email':email}).encode('utf-8')
+    data = urlparse.urlencode({'email': email}).encode('utf-8')
 
     urldata = urlreq.Request(url, data=data)
 
