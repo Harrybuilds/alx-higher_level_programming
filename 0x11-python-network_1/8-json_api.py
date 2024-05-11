@@ -14,7 +14,7 @@ if __name__ == '__main__':
     # set url
     url = "http://0.0.0.0:5000/search_user"
 
-    response = requests.post(url, q)
+    response = requests.post(url, data={"q": q})
 
     try:
         data = response.json()
